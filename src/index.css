@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply font-body antialiased transition-colors duration-300;
+    @apply bg-spice-50 text-pepper-900;
+    @apply dark:bg-pepper-950 dark:text-pepper-100;
+    overflow-x: hidden;
+  }
+
+  /* === SINHALA TEXT FIX — prevent descender/ascender clipping and resize === */
+  [lang="si"] *,
+  .sinhala-text,
+  .font-sinhala {
+    line-height: 1.6 !important;
+    padding-bottom: 0.1em;
+    overflow: visible;
+  }
+  
+  html[lang="si"] {
+    font-size: 14px; /* Scales down the 'rem' unit for Sinhala globally */
+  }
+
+  [lang="si"] h1, [lang="si"] h2, [lang="si"] h3 {
+    line-height: 1.4 !important;
+    padding-bottom: 0.15em;
+    overflow: visible;
+  }
+
+  ::selection {
+    @apply bg-spice-500/30 text-spice-900 dark:text-spice-100;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-spice-100 dark:bg-pepper-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-spice-400 dark:bg-spice-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-spice-500 dark:bg-spice-600;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-xl bg-white dark:bg-pepper-900/70
+           border border-spice-200/70 dark:border-pepper-700/30
+           rounded-2xl
+           shadow-lg shadow-spice-900/5 dark:shadow-xl dark:shadow-black/20;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-spice-600 via-spice-500 to-cinnamon-500 dark:from-spice-400 dark:via-spice-300 dark:to-spice-500;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gradient-to-r from-spice-600 to-spice-500 hover:from-spice-500 hover:to-spice-400 text-white font-semibold rounded-xl shadow-lg shadow-spice-500/25 hover:shadow-spice-500/40 transform hover:scale-[1.03] active:scale-[0.98] transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-spice-500 text-spice-600 dark:text-spice-400 hover:bg-spice-500 hover:text-white font-semibold rounded-xl transform hover:scale-[1.03] active:scale-[0.98] transition-all duration-300;
+  }
+
+  /* Hero stat cards over dark overlay — keep translucent white on dark bg, but warm tinted in light */
+  .hero-stat-card {
+    @apply backdrop-blur-xl
+           bg-white/20 border border-white/20
+           dark:bg-white/10 dark:border-white/10
+           rounded-2xl;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  .mask-gradient-b {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+}

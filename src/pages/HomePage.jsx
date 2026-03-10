@@ -57,10 +57,10 @@ export default function HomePage() {
               </motion.div>
 
               <motion.h1 {...fadeInUp} transition={{ delay: 0.3 }} className="overflow-visible">
-                <span className={`block font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.15] ${fontClass}`}>
+                <span className={`block font-display font-bold text-white leading-[1.15] ${isSinhala ? 'text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-sinhala' : 'text-4xl sm:text-5xl lg:text-6xl xl:text-7xl'}`}>
                   {t('hero.title1')}
                 </span>
-                <span className={`block font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.15] mt-2 bg-clip-text text-transparent bg-gradient-to-r from-spice-400 via-spice-300 to-spice-500 ${fontClass}`}>
+                <span className={`block font-display font-bold leading-[1.15] mt-2 bg-clip-text text-transparent bg-gradient-to-r from-spice-400 via-spice-300 to-spice-500 ${isSinhala ? 'text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-sinhala' : 'text-4xl sm:text-5xl lg:text-6xl xl:text-7xl'}`}>
                   {t('hero.title2')}
                 </span>
               </motion.h1>

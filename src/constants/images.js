@@ -20,15 +20,15 @@ export const images = {
 
   // About section
   spiceGarden: 'spiceGarden.webp',
-  farmWorker: 'farmWorker.jpg',
+  farmWorker: 'farmWorker.webp',
   spiceMarket: 'spiceProcessing.webp',
 
   // Product collection - lifestyle images
-  spicesFlat: 'spicesFlat.jpg',
-  spicesBowl: 'spicesBowl.jpg',
+  spicesFlat: 'spicesFlat.webp',
+  spicesBowl: 'spicesBowl.webp',
 
   // Textures
-  woodTexture: 'woodTexture.jpg',
+  woodTexture: 'woodTexture.webp',
 }
 
 // Product-specific images for the products page

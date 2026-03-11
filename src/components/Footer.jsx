@@ -1,13 +1,11 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, ArrowUp } from 'lucide-react'
+import { MapPin, Phone, Mail } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
 export default function Footer() {
   const { t, isSinhala } = useLanguage()
   const fontClass = isSinhala ? 'font-sinhala' : ''
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   const links = [
     { label: t('nav.home'), to: '/' },
@@ -119,16 +117,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Back to top */}
-      <motion.button
-        onClick={scrollToTop}
-        whileHover={{ scale: 1.1, y: -3 }}
-        whileTap={{ scale: 0.9 }}
-        className="fixed bottom-24 right-6 w-10 h-10 rounded-full bg-spice-500 hover:bg-spice-400 text-white shadow-lg shadow-spice-500/30 flex items-center justify-center z-40"
-        aria-label="Back to top"
-      >
-        <ArrowUp className="w-5 h-5" />
-      </motion.button>
     </footer>
   )
 }

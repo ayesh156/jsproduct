@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion'
-import { Star, Leaf, ShieldCheck, Award } from 'lucide-react'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Star, Leaf, ShieldCheck, Award, ChevronDown } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 import PageTransition, { staggerContainer, staggerItem } from '../components/PageTransition'
 import { productImages } from '../constants/images'
@@ -14,7 +15,7 @@ const productGradients = [
 ]
 
 const features = [
-  { icon: Leaf, title: '100% Organic', desc: 'No chemicals or additives' },
+  { icon: Leaf, title: '100% Natural', desc: 'Traditional methods, no chemicals' },
   { icon: ShieldCheck, title: 'Quality Tested', desc: 'Strict lab testing standards' },
   { icon: Award, title: 'Premium Grade', desc: 'Highest export quality' },
 ]
@@ -23,6 +24,11 @@ export default function ProductsPage() {
   const { t, isSinhala } = useLanguage()
   const fontClass = isSinhala ? 'font-sinhala' : ''
   const items = t('products.items')
+  const [expandedGrades, setExpandedGrades] = useState(null)
+
+  const toggleGrades = (index) => {
+    setExpandedGrades(expandedGrades === index ? null : index)
+  }
 
   return (
     <PageTransition>
@@ -139,6 +145,49 @@ export default function ProductsPage() {
                         Order →
                       </a>
                     </div>
+
+                    {/* Grades / Sub-categories */}
+                    {item.grades && item.grades.length > 0 && (
+                      <div className="mt-4 border-t border-spice-100 dark:border-pepper-800 pt-4">
+                        <button
+                          onClick={() => toggleGrades(i)}
+                          className={`flex items-center gap-1.5 text-xs font-semibold text-spice-600 dark:text-spice-400 hover:text-spice-700 dark:hover:text-spice-300 transition-colors w-full ${fontClass}`}
+                        >
+                          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedGrades === i ? 'rotate-180' : ''}`} />
+                          {isSinhala ? `ලබාගත හැකි ප්‍රමිති (${item.grades.length})` : `Available Grades (${item.grades.length})`}
+                        </button>
+                        <AnimatePresence>
+                          {expandedGrades === i && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="mt-3 grid grid-cols-2 gap-2">
+                                {item.grades.map((grade, gi) => (
+                                  <motion.div
+                                    key={gi}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: gi * 0.05 }}
+                                    className="group/grade p-2.5 rounded-lg bg-spice-50 dark:bg-pepper-800/50 border border-spice-100 dark:border-pepper-700/50 hover:border-spice-300 dark:hover:border-spice-600 hover:bg-spice-100 dark:hover:bg-pepper-800 transition-all cursor-default"
+                                  >
+                                    <span className="block text-xs font-bold text-spice-700 dark:text-spice-300">
+                                      {grade.name}
+                                    </span>
+                                    <span className={`block mt-0.5 text-[10px] leading-tight text-pepper-500 dark:text-pepper-400 ${fontClass}`}>
+                                      {grade.desc}
+                                    </span>
+                                  </motion.div>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>

@@ -136,8 +136,8 @@ export default function ContactPage() {
                       <p className="text-sm font-medium text-pepper-500 dark:text-pepper-400">
                         {isSinhala ? 'වේලාවන්' : 'Business Hours'}
                       </p>
-                      <p className="mt-1 text-pepper-800 dark:text-pepper-200 font-medium text-sm">
-                        {isSinhala ? 'සඳු - සෙන: පෙ.ව. 8:00 - ප.ව. 6:00' : 'Mon - Sat: 8:00 AM - 6:00 PM'}
+                      <p className={`mt-1 text-pepper-800 dark:text-pepper-200 font-medium text-sm ${fontClass}`}>
+                        {isSinhala ? 'සෑම විටම විවෘතයි' : 'Full time open'}
                       </p>
                     </div>
                   </div>
@@ -259,7 +259,7 @@ export default function ContactPage() {
               <div className="relative w-full h-80 sm:h-96 bg-pepper-100 dark:bg-pepper-900 group">
                 {/* Google Maps Embed */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.5!2d80.6028554!3d6.1525698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDknMDkuMyJOIDgwwrAzNicxMC4zIkU!5e0!3m2!1sen!2slk!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.721934095918!2d80.5976641362145!3d6.145777708772863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1452c34810e41%3A0xa19dc17e7189b7d6!2sAgra%20Ayurweda%20Osusala!5e0!3m2!1sen!2slk!4v1773299992277!5m2!1sen!2slk"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

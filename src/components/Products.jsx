@@ -1,4 +1,5 @@
-import { Star } from 'lucide-react'
+import { useState } from 'react'
+import { Star, ChevronDown, ChevronUp } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
 const productEmojis = ['🫚', '🟤', '⚫', '⚪', '🌶️', '💧']
@@ -14,6 +15,11 @@ const productGradients = [
 export default function Products() {
   const { t } = useLanguage()
   const items = t('products.items')
+  const [expandedGrades, setExpandedGrades] = useState(null)
+
+  const toggleGrades = (index) => {
+    setExpandedGrades(expandedGrades === index ? null : index)
+  }
 
   return (
     <section id="products" className="relative section-padding overflow-hidden">
@@ -76,6 +82,32 @@ export default function Products() {
                     ))}
                     <span className="ml-2 text-xs text-pepper-500 dark:text-pepper-400">(5.0)</span>
                   </div>
+
+                  {/* Grades / Sub-categories */}
+                  {item.grades && item.grades.length > 0 && (
+                    <div className="mt-4">
+                      <button
+                        onClick={() => toggleGrades(i)}
+                        className="flex items-center gap-1.5 text-xs font-semibold text-spice-600 dark:text-spice-400 hover:text-spice-700 dark:hover:text-spice-300 transition-colors"
+                      >
+                        {expandedGrades === i ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                        Available Grades ({item.grades.length})
+                      </button>
+                      {expandedGrades === i && (
+                        <div className="mt-2 flex flex-wrap gap-1.5">
+                          {item.grades.map((grade, gi) => (
+                            <span
+                              key={gi}
+                              className="px-2.5 py-1 text-[11px] font-bold rounded-full bg-spice-100 dark:bg-spice-900/40 text-spice-700 dark:text-spice-300 border border-spice-200 dark:border-spice-700/50"
+                              title={grade.desc}
+                            >
+                              {grade.name}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

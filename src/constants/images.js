@@ -9,7 +9,7 @@ export const images = {
   // Cinnamon images  
   cinnamonSticks: 'product/cinnamonSticks.webp',
   cinnamonPowder: 'product/cinnamonPowder.webp',
-  cinnamonOil: 'product/cinnamonBarkOil.webp',
+  cinnamonOil: 'product/cinnamonLeafOil.webp',
   cinnamonProcess: 'cinnamonProcessing.webp',
 
   // Pepper images
@@ -38,5 +38,5 @@ export const productImages = [
   'product/blackPepper.webp', // Black Pepper
   'product/whitePepper.webp', // White Pepper
   'product/pepperPowder.webp', // Pepper Powder
-  'product/cinnamonBarkOil.webp', // Cinnamon Bark Oil
+  'product/cinnamonLeafOil.webp', // Cinnamon Leaf Oil
 ]

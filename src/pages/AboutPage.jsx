@@ -8,10 +8,10 @@ import { images } from '../constants/images'
 const valueIcons = [Leaf, Hand, Sprout, ShieldCheck]
 
 const timeline = [
-  { year: '1975', en: 'Family began cultivating cinnamon in Deiyandara', si: 'පවුල දෙයියන්දර හි කුරුඳු වගා කිරීම ආරම්භ කළේය' },
-  { year: '1990', en: 'Expanded to pepper cultivation', si: 'ගම්මිරිස් වගාවට පුළුල් විය' },
-  { year: '2005', en: 'Started export quality production', si: 'අපනයන ගුණාත්මක නිෂ්පාදනය ආරම්භ කළේය' },
-  { year: '2020', en: 'Launched JS Products brand', si: 'JS Products වෙළඳ නාමය දියත් කළේය' },
+  { year: '2020', en: 'Humble beginnings — Opened our first local spice shop to share authentic flavors', si: 'ආරම්භය — අපගේ පළමු දේශීය කුළුබඩු අලෙවිසැල විවෘත කිරීම' },
+  { year: '2021', en: 'Official incorporation and formal registration of the business', si: 'ව්‍යාපාරය නිල වශයෙන් ලියාපදිංචි කිරීම සහ නීතිගත කිරීම' },
+  { year: '2023', en: 'Established a dedicated, modern cinnamon processing center', si: 'නවීන පහසුකම් සහිත කුරුඳු සැකසුම් මධ්‍යස්ථානයක් ස්ථාපිත කිරීම' },
+  { year: '2024', en: 'Introduced advanced cinnamon cutting machinery, boosting production efficiency', si: 'නවීන කුරුඳු කැපීමේ යන්ත්‍ර හඳුන්වා දෙමින් නිෂ්පාදන කාර්යක්ෂමතාව ඉහළ නැංවීම' },
 ]
 
 export default function AboutPage() {

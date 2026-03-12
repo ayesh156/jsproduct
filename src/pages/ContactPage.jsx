@@ -259,7 +259,7 @@ export default function ContactPage() {
               <div className="relative w-full h-80 sm:h-96 bg-pepper-100 dark:bg-pepper-900 group">
                 {/* Google Maps Embed */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.721934095918!2d80.5976641362145!3d6.145777708772863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1452c34810e41%3A0xa19dc17e7189b7d6!2sAgra%20Ayurweda%20Osusala!5e0!3m2!1sen!2slk!4v1773299992277!5m2!1sen!2slk"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3966.891129171074!2d80.59471177498979!3d6.145322593841698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMDgnNDMuMiJOIDgwwrAzNSc1MC4yIkU!5e0!3m2!1sen!2slk!4v1773318406676!5m2!1sen!2slk"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

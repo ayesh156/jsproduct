@@ -28,11 +28,11 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-3 mb-4 group">
               <img
                 src="/logo.jpeg"
-                alt="JS Products"
+                alt="JS Product Ceylon Spices Logo"
                 className="w-10 h-10 rounded-xl object-cover shadow-lg group-hover:shadow-spice-500/30 transition-shadow"
               />
               <div>
-                <span className="font-display font-bold text-lg text-white">JS Products</span>
+                <span className="font-display font-bold text-lg text-white">JS Product</span>
                 <span className="block text-[10px] text-spice-400 -mt-1 tracking-wider uppercase">Ceylon Spices</span>
               </div>
             </Link>

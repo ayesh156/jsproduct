@@ -105,14 +105,14 @@ export default function Navbar() {
             <Link to="/" className="flex items-center gap-2.5 group">
               <motion.img
                 src="/logo.jpeg"
-                alt="JS Products"
+                alt="JS Product | Premium Ceylon Spices"
                 className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover shadow-lg shadow-spice-500/20 group-hover:shadow-spice-500/40 transition-shadow duration-300"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
               />
               <div className="hidden sm:block">
                 <span className={`font-display font-bold text-lg transition-colors duration-300 ${scrolled ? 'text-pepper-900 dark:text-spice-100' : 'text-white'} ${isSinhala ? 'font-sinhala' : ''}`}>
-                  JS Products
+                  JS Product
                 </span>
                 <span className={`block text-[10px] font-medium -mt-1 tracking-wider uppercase transition-colors duration-300 ${scrolled ? 'text-spice-600 dark:text-spice-400' : 'text-spice-300'}`}>
                   Ceylon Spices
